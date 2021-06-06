@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 
 function Menus(props) {
     return (
-        <a href={`/myAccount/${props.url}`} className='item__container shadow'>
+        <a href={`#/react-e-commerce/myAccount/${props.url}`} className='item__container shadow'>
             <div className='item__inside'>
                 {props.title}
             </div>

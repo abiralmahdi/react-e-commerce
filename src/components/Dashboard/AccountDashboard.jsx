@@ -5,7 +5,7 @@ import AccountCard from './AccountCard'
 import Tables from './Tables'
 import Settings from './Settings'
 import PrivacyPolicy from './PrivacyPolicy'
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {HashRouter as Router, Switch, Route, Link} from "react-router-dom";
 import Cookies from'universal-cookie'
 import axios from 'axios'
 

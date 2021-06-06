@@ -421,13 +421,13 @@ if (loggedIn){
               
             </Button>
           :
-          <a href={`/checkout/${cookies.get('username')}`}>
+          <Link to={`/checkout/${cookies.get('username')}`}>
             <Button variant="success" onClick={() => setShow(false)}>
               
                 Proceed to Checkout
               
             </Button>
-          </a>
+          </Link>
           }
           
           </>
