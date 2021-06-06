@@ -1,0 +1,14 @@
+.item__container{
+    background-color: #2e2d2d;
+    padding: 20px;
+    width: 100%;
+    color: white !important;
+    text-decoration: none !important;
+    margin: 3px;
+    transition: 0.1s;
+}
+
+.item__container:hover{
+    background-color: #424141;
+
+}

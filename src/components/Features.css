@@ -1,0 +1,24 @@
+.featurePhoto{
+    margin:30px;
+    height:250px;
+    margin-top: 50px !important;
+}
+.featureDesc{
+    color:white;
+    font-size: 25px;
+    margin: 50px
+    
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .featurePhoto{
+        width:350px;
+        margin:20px
+    }
+    .featureDesc{
+        margin-left:40px;
+        font-size: 15px;
+    }
+}

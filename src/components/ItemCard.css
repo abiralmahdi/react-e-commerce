@@ -1,0 +1,22 @@
+.addToCartButton{
+    background-color: rgba(255, 115, 0, 0.788);
+    padding:10px;
+    border:none;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: 0.25s   
+}
+
+.addToCartButton:hover{
+    background-color: rgba(255, 115, 0);
+}
+
+.addToCartButton:active{
+    background-color: rgb(252, 248, 17);
+}
+.cardText{
+    height: 100px;
+    overflow-y: hidden;
+}
+
+

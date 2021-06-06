@@ -1,0 +1,85 @@
+.cardRow > h3{
+    margin-top: 60px;  
+    margin-left: 10%; 
+    font-family: fantasy;
+    margin-bottom: 20px;
+}
+
+.cardRow > hr{
+    background-color:rgb(231, 226, 226) !important;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.cardRow > button{
+  margin-top: 55px !important;
+  margin-bottom: 40px !important;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+
+.cardRow{
+  display:flex;
+  /* justify-content: space-between; */
+}
+
+.cardRowScroll{
+    display:flex;
+    width:90%;
+    overflow:auto;
+    margin: auto;
+    padding-bottom: 20px;
+}
+.card{
+    margin-right: 20px;
+    object-fit: contain;
+    display: flex;
+    flex: 0 0 290px;
+}
+button > a{
+  color:white !important
+}
+
+
+/* the scroollbar stuffs */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(199, 197, 197); 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(163, 162, 162); 
+  }
+
+
+  @media only screen and (max-width: 600px) {
+    .cardRow > h3{
+      font-size: 25px !important;
+  }
+  .card{
+    flex: 0 0 350px;
+}
+}
+
+
+
+
+/* color: white;
+background-color:black;
+padding:10px;
+border:none;
+border-radius: 10px;
+font-weight: 500;
+transition: 0.25s  */

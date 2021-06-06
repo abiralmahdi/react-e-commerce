@@ -1,0 +1,16 @@
+
+/ 1. On Order menu of the account dashboard
+// 2. Account Settings
+// 3. Privacy Policy
+// 4. Individual Product Add to cart functionality
+// 5. Search Option
+6. Registration OTP functionality [**OPTIONAL**]
+/ 7. Remove one item from favourite
+9. Custom admin Dashbaord [***DO IT AT LAST***]
+// 10. Fixing the routing bugs with localStorage
+// 11. Contact Form funcitonality 
+// 12. Authorization of routes in backend and frontend
+// 13. Remove one item from cart [**SIMILAR TO NO.7**]
+14. Total Price calculation in the cart
+15. Similar items of same category
+16. Reviews and comments section in individual product page

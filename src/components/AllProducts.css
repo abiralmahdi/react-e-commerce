@@ -1,0 +1,20 @@
+.allProducts{
+    display:flex;
+    flex-wrap: wrap;
+    margin:50px;
+    margin-top: 0 !important;
+}
+
+.cardFlex{
+    margin: 20px !important;
+}
+
+.card{
+    margin-top: 50px !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .allProducts{
+        margin:20px
+    }
+}

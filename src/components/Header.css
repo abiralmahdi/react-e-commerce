@@ -1,0 +1,78 @@
+.navbarHeader{
+    background-color: rgba(255, 255, 255, 0.726) !important;
+    padding-top: 1% !important;
+    padding-bottom: 1% !important;
+    /* box-shadow: 5px 10px 50px #c7c4c4; */
+    margin-top: 40px;
+}
+#topNavbar{
+    background-color: black;
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+}
+#NavbarBrand{
+    font-size: 15px;
+}
+#cartButton{
+    background-color:rgba(255, 115, 0, 0.788);
+    color:white;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+#cartButton:hover{
+    background-color: rgb(255, 115, 0);
+}
+
+
+
+.navLinks{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.navLinkss{
+    color:black !important
+}
+
+#brandLabel{
+    padding-left: 40px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+.blackLink{
+    color:initial !important;
+    text-decoration: none !important;
+}
+.cardBody{
+    height: 500px !important;
+    overflow-y: scroll;
+}
+
+#searchModal{
+    max-width: 95% !important;
+}
+#myProgress {
+    width: 100%;
+    background-color: black;
+
+  }
+  
+  #myBar {
+    width: 0%;
+    height: 5px;
+    background-color: rgba(255, 115, 0);
+  }
+
+@media only screen and (max-width: 600px) {
+    #brandLabel{
+        font-size: 20px;
+    }
+
+    .cardsss > .mainCard{
+        max-width: 95% !important;
+    }
+}
+

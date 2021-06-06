@@ -1,0 +1,14 @@
+
+.accountCard{
+    margin: 10px;
+}
+
+.accountCard:hover{
+    transition: 0.2s;
+    box-shadow: 2px 1px 5px 5px #e2e2e2;
+    background-color: #F8F8F8;
+}
+.accountCard > .panel:hover{
+    transition: 0.2s;
+
+}

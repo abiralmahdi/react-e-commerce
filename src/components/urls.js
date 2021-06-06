@@ -1,0 +1,1 @@
+export const URLS = 'https://abirs-django-ecommerce-api.herokuapp.com'

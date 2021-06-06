@@ -1,0 +1,19 @@
+.carouselImage{
+    height: 100%;
+    filter: brightness(70%);
+}
+
+.carouselCaption > h3{
+    font-size: 25px !important;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .carouselCaption > h3{
+        font-size: 20px !important;
+    }
+    .carouselCaption > p{
+        font-size: 15px !important;
+    }
+}

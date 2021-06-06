@@ -1,0 +1,42 @@
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px  !important;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  form{
+      width:60%
+  }
+  .container {
+    border-radius: 5px;
+    padding: 60px !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  #contactHeader{
+    font-family: fantasy;
+    margin-top:150px
+  }
+
+  .map-container{
+    height:500px !important
+  }
+
+
+  
+@media only screen and (max-width: 600px) {
+    form{
+        width:100%
+    }
+}
+
+
+  
