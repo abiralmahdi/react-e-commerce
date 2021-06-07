@@ -35,7 +35,7 @@ function Login(props) {
                         request =>
                         {console.log(request.data.username)
                         localStorage.setItem('userID', request.data.username) 
-                        window.location.href = '/'
+                        window.location.href = '#/react-e-commerce'
                     }
                     ); 
                     
