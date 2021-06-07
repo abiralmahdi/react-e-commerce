@@ -38,6 +38,7 @@ function Checkout() {
       .then(res => {
         console.log(res.data)
         localStorage.removeItem('cart')
+        localStorage.removeItem('totalPrice')
         window.location.href = res.data
       }
       )

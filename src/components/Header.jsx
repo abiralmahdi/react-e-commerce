@@ -19,7 +19,6 @@ import Card from './ItemCard'
 
 function Header(props) {
   const cart = JSON.parse(localStorage.getItem('cart'))
-  const [loggedIn, setloggedIn] = useState(false)
   const cookies = new Cookies();
 
   //ueState for form input 
@@ -27,9 +26,9 @@ function Header(props) {
 
     useEffect(() => {
       if (cookies.get('username') != undefined){
-        setloggedIn(true)
+        props.setloggedIn(true)
       }
-    }, [loggedIn])
+    }, [props.loggedIn])
 
   // Modal States
   const [show2, setShow2] = useState(false);
@@ -174,7 +173,7 @@ useEffect(() => {
 }, [])
 
 useEffect(() => {
-  if (loggedIn === false){
+  if (props.loggedIn === false){
       localStorage.setItem('message', 'Please log in first')
   }
 }, [])
@@ -192,7 +191,7 @@ function storeCategory(item, item2){
 let blogStyle = {}
 let cartButtonStyle = {}
 let nav2Style = {}
-if (loggedIn){
+if (props.loggedIn){
   blogStyle = {
     paddingTop:'15px'
   }
@@ -241,7 +240,7 @@ if (loggedIn){
 
               {
             
-              loggedIn === false?
+            props.loggedIn === false?
               <Link to='/login' onClick={props.move} style={{color:'grey'}}>
                 Log In
               </Link>
@@ -255,7 +254,8 @@ if (loggedIn){
                     localStorage.removeItem('userID')
                     localStorage.removeItem('cart')
                     localStorage.setItem('message', 'Logged Out Successfully')
-                    window.location.href = 'https://abiralmahdi.github.io/react-e-commerce/login'
+                    props.setloggedIn(false)
+                    window.location.href = '#/react-e-commerce/login'
                   }
                 }
                     style={{color:'grey'}}
@@ -398,9 +398,9 @@ if (loggedIn){
           :
           <>
           {
-          loggedIn === false
+          props.loggedIn === false
           ?
-          <a href='/login'>
+          <a href='/react-e-commerce/#/react-e-commerce/login'>
             <Button variant="success" onClick={
               () => {
                 setShow(false); 

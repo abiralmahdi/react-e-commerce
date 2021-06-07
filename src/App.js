@@ -87,7 +87,7 @@ useEffect(() => {
   return (
     <div className="App">
       <Router basename={process.env.PUBLIC_URL}>
-        <Header category={setcatID} setprodID={setprodID} subcategory={setsubCatID} searchedItem={searchedItem} setsearchedItem={setsearchedItem} cart={cart} setcart={setcart} move={move}/>
+        <Header category={setcatID} loggedIn={loggedIn} setloggedIn={setloggedIn} setprodID={setprodID} subcategory={setsubCatID} searchedItem={searchedItem} setsearchedItem={setsearchedItem} cart={cart} setcart={setcart} move={move}/>
         <Switch>
           <Route exact path='/'>
             <HomeCarousel/>
@@ -136,11 +136,11 @@ useEffect(() => {
               ?
               <Checkout move={move}/>
               :
-              <Login move={move}/>
+              <Login move={move} loggedIn={loggedIn} setloggedIn={setloggedIn}/>
             }
           </Route>
           <Route exact path='/login'>
-              <Login move={move}/>            
+              <Login move={move} loggedIn={loggedIn} setloggedIn={setloggedIn}/>            
           </Route>
           <Route exact path='/registration'>
             {
@@ -160,7 +160,7 @@ useEffect(() => {
           <Route exact path='/myAccount/:type'>
             {
               loggedIn === false?
-              <Login move={move}/> : 
+              <Login move={move} loggedIn={loggedIn} setloggedIn={setloggedIn}/> : 
               <AccountDashboard move={move}/>
             }
               

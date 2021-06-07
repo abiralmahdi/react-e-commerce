@@ -30,7 +30,7 @@ function ItemCards(props) {
             <div className='cardRow'>
                 {typeof props.category == 'object'?<h3>{props.category.name}</h3>:<h3>{props.category}</h3>}
                 
-                <button className='btn btn-dark'><Link to={`/products/${props.category.id}`}>See more</Link></button>
+                {/* <button className='btn btn-dark' onClick={()=>props.move()}><Link to={`/products/${props.category.id}`}>See more</Link></button> */}
                 <hr/>
             </div>
             
