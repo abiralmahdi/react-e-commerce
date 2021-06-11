@@ -61,6 +61,27 @@ function AccountDashboard(props) {
     }, [])
 
 
+    function openNavBar(){
+        let navbar = document.getElementById('sidenavbar')
+        let main = document.getElementById('page-wrapper')
+        navbar.style.display = 'flex'
+        
+
+
+    }
+
+    
+    function closeNavBar(){
+        let navbar = document.getElementById('sidenavbar')
+        let main = document.getElementById('page-wrapper')
+        navbar.style.display = 'none'
+        main.style.marginLeft = '0'
+
+
+
+    }
+
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -68,15 +89,16 @@ function AccountDashboard(props) {
   return (
     <Router>
       <div id="wrapper">
-      <nav className="navbar-default navbar-side" role="navigation">
+      <nav className="navbar-default navbar-side" role="navigation" id='sidenavbar' style={{display:'none'}}>
             <div className="sidebar-collapse">
                 <ul className="nav" id="main-menu">
-                    <Menus title='Dashboard' url='dashboard'/>
-                    <Menus title='Purchases' url='purchases'/>
-                    <Menus title='Favourites' url='favourites'/>
-                    <Menus title='On Order' url='on-order'/>
-                    <Menus title='Account Settings' url='settings'/>
-                    <Menus title='Privacy Policy' url='privacy-policy'/>
+                    <button onClick={closeNavBar} className='btn btn-dark ml-auto'><i class="fas fa-window-close"></i></button>
+                    <Menus move={props.move} closeNavBar={closeNavBar} title='Dashboard' url='dashboard'/>
+                    <Menus move={props.move} closeNavBar={closeNavBar} title='Purchases' url='purchases'/>
+                    <Menus move={props.move} closeNavBar={closeNavBar} title='Favourites' url='favourites'/>
+                    <Menus move={props.move} closeNavBar={closeNavBar} title='On Order' url='on-order'/>
+                    <Menus move={props.move} closeNavBar={closeNavBar} title='Account Settings' url='settings'/>
+                    <Menus move={props.move} closeNavBar={closeNavBar} title='Privacy Policy' url='privacy-policy'/>
                 </ul>
                
             </div>
@@ -84,8 +106,9 @@ function AccountDashboard(props) {
         </nav>
         
             
-            <div id="page-wrapper">
+            <div id="page-wrapper" style={{marginLeft:'0'}}>
                 <div id="page-inner">
+                    
                 <Switch>
                     <Router basename={process.env.PUBLIC_URL}>
                     <Route exact path='/myAccount/purchases'>
@@ -122,7 +145,8 @@ function AccountDashboard(props) {
 
                     <Route exact path='/myAccount/dashboard'>
                     <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-md-12 d-flex">
+                        <button onClick={openNavBar} className='btn btn-light mb-2 mr-3'><i class="fas fa-bars"></i></button>
                         <h2 className='text-dark'>Admin Dashboard</h2>
                         </div>
                     </div>

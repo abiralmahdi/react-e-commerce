@@ -4,6 +4,17 @@ import './Table.css'
 
 function Tables(props) {
 
+
+    
+    function openNavBar(){
+        let navbar = document.getElementById('sidenavbar')
+        let main = document.getElementById('page-wrapper')
+        navbar.style.display = 'flex'
+        // main.style.marginLeft = '260px'
+
+
+    }
+
     // Use State for setting up the main contents of the table
     const [contents, setcontents] = useState([])
     useEffect(()=>{
@@ -82,7 +93,8 @@ function Tables(props) {
                             <div className="col-md-12 col-sm-12 col-xs-12">
                                 <div className="panel panel-default">
                                 <div className="row m-3">
-                                    <div className="col-md-12">
+                                    <div className="col-md-12 d-flex">
+                                        <button onClick={openNavBar} className='btn btn-light mb-2 mr-3'><i class="fas fa-bars"></i></button>
                                         <h2 className='text-dark'>{props.title}</h2>
                                     </div>
                                 </div>            

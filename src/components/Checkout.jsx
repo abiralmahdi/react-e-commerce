@@ -28,7 +28,7 @@ function Checkout() {
       axios.post(`https://abirs-django-ecommerce-api.herokuapp.com/payment`, {
         'fname': e.target[0].value,
         'lname': e.target[1].value,
-        'username': e.target[2].value,
+        'username': userData.email,
         'email': e.target[3].value,
         'contact':e.target[4].value,
         'address':e.target[5].value,
