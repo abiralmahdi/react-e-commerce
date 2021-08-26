@@ -57,7 +57,7 @@ function Tables(props) {
                     for (let content in contents){
                         details.push(Object.values(contents[content]))  // Pushing the JSON data in a form of array
                     }
-                    console.log(details)
+                    setcontents(details)
                 }
                 else{
                     alert(`Couldn't remove item. Please try again later.`)
@@ -124,9 +124,9 @@ function Tables(props) {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {details.map(
+                                            {contents.map(
                                                 content => (
-                                                    <tr key={details.indexOf(content)}>
+                                                    <tr key={contents.indexOf(content)}>
                                                         <td>{content[0]}</td>
                                                         
                                                         <td>
@@ -246,10 +246,10 @@ function Tables(props) {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {details.map(
+                                            {contents.map(
                                                 content => (
                                                     
-                                                    <tr key={details.indexOf(content)}>
+                                                    <tr key={contents.indexOf(content)}>
                                                         <td>{content[0]}</td>
                                                         
                                                         <td>
@@ -291,9 +291,9 @@ function Tables(props) {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {details.map(
+                                            {contents.map(
                                                 content => (
-                                                    <tr key={details.indexOf(content)}>
+                                                    <tr key={contents.indexOf(content)}>
                                                         <td>{content[0]}</td>
                                                         
                                                         <td>
