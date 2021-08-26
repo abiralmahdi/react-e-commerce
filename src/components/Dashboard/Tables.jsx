@@ -77,11 +77,10 @@ function Tables(props) {
         obj["totalPrice"] = itemObj[3]
         obj["discount"] = itemObj[4]
 
-        axios.post('http://127.0.0.1:8000/addToPurchases', obj).then(
+        axios.post('http://127.0.0.1/addToPurchases', obj).then(
             res => {
-                if (JSON.stringify(res.data['status']) === 'Order delivered'){
-                    alert(JSON.stringify(res.data))
-                    setcontents([])
+                if (res.data === 400){
+                    alert('There was an error. Please try again later.')
                 }
                 else{
                     alert(JSON.stringify(res.data))
@@ -188,7 +187,7 @@ function Tables(props) {
                                         <tbody>
                                             {contents.map(
                                                 content => (
-                                                    <tr key={details.indexOf(content)}>
+                                                    <tr key={contents.indexOf(content)}>
                                                         <td>{content[0]}</td>
                                                         
                                                         <td>
