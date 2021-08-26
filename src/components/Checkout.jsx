@@ -11,10 +11,13 @@ function Checkout() {
 
     const [cartResult, setcartResult] = useState([])
 
-    if (cart === undefined || cart === null){}
-    else{
-      setcartResult(Object.entries(cart))
-    }
+    useEffect(() => {
+      if (cart === undefined || cart === null){}
+      else{
+        setcartResult(Object.entries(cart))
+      }
+    }, [])
+
 
       useEffect(()=>{
         async function fetchData() {
@@ -46,9 +49,9 @@ function Checkout() {
     }
 
 
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
+    // useEffect(() => {
+    //   window.scrollTo(0, 0);
+    // }, []);
     
     
     return (
