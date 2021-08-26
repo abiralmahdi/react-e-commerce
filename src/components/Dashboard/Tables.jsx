@@ -77,7 +77,7 @@ function Tables(props) {
         obj["totalPrice"] = itemObj[3]
         obj["discount"] = itemObj[4]
 
-        axios.post('http://127.0.0.1/addToPurchases', obj).then(
+        axios.post('http://127.0.0.1:8000/addToPurchases', obj).then(
             res => {
                 if (res.data === 400){
                     alert('There was an error. Please try again later.')
