@@ -14,7 +14,7 @@ function Login(props) {
 
     function handleSubmit(e){
         props.move()
-          axios.post(`http://127.0.0.1:8000/accounts/getAuthToken`, {
+          axios.post(`https://abirs-django-ecommerce-api.herokuapp.com/accounts/getAuthToken`, {
             "username":e.target[1].value,
             "password":e.target[2].value,
         })
@@ -30,7 +30,7 @@ function Login(props) {
                     cookies.set('password', e.target[2].value, { path: '/' });
                     cookies.set('token', JSON.stringify(res.data), { path: '/' });
                     
-                    const request = axios.get(`http://127.0.0.1:8000/accounts/fetchSingleUser/${e.target[1].value}`)
+                    const request = axios.get(`https://abirs-django-ecommerce-api.herokuapp.com/accounts/fetchSingleUser/${e.target[1].value}`)
                     .then(
                         request =>
                         {console.log(request.data.username)

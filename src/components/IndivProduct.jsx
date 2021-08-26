@@ -35,7 +35,7 @@ useEffect(()=>{
       const request3 = await axios.get(`${URLS}/accounts/fetchSingleUserReal/${cookies.get('username', {path:'/'})}`)
       setuserID(request3.data.id)
 
-      const request2 = await axios.get(`http://127.0.0.1:8000/checkFavourites/${request.data[product_id-1].id}/${request3.data.id}`)
+      const request2 = await axios.get(`https://abirs-django-ecommerce-api.herokuapp.com/checkFavourites/${request.data[product_id-1].id}/${request3.data.id}`)
       .then(
           res => {
             res.data===true ? setisFavourite(true) : setisFavourite(false)
@@ -81,7 +81,7 @@ const productDetails = items[product_id - 1]
 // Adding to wishlist
 function addToWishList(){
     props.move()
-    axios.post('http://127.0.0.1:8000/addToFavourite', {
+    axios.post('https://abirs-django-ecommerce-api.herokuapp.com/addToFavourite', {
         'productName': `[[\"${productDetails.id}\",{\"name\":\"${productDetails.product_name}\",\"price\":${productDetails.price},\"category\":${productDetails.category},\"id\":${productDetails.id},\"sub_category\":${productDetails.sub_category},\"user\":${userID}}]]`,
         'product': productDetails.id,
         'user':userID,
@@ -140,7 +140,7 @@ useEffect(() => {
                         {item.id === product_id-1+1 &&
                         <div className='product'>
                         <div className='productImage'>
-                            <img src={`http://127.0.0.1:8000${productDetails['image']}`} alt='Image is not available' className='mainImage'/>
+                            <img src={`https://abirs-django-ecommerce-api.herokuapp.com${productDetails['image']}`} alt='Image is not available' className='mainImage'/>
                         </div>
                         <div className='productDetails'>
                             <div className='productTitle text-center'>

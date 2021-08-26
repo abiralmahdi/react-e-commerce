@@ -18,7 +18,7 @@ function AccountDashboard(props) {
     const [userData, setuserData] = useState('')
     useEffect(()=>{
         async function fetchData() {
-            const request = await axios.get(`http://127.0.0.1:8000/accounts/fetchSingleUser/${userName}`);  
+            const request = await axios.get(`https://abirs-django-ecommerce-api.herokuapp.com/accounts/fetchSingleUser/${userName}`);  
 
             setuserData(request.data)
             // console.log(request.data.username)
@@ -32,7 +32,7 @@ function AccountDashboard(props) {
     const [contents, setcontents] = useState([])
     useEffect(()=>{
         async function fetchData() {
-            const request = await axios.get(`http://127.0.0.1:8000/fetchIndivPurchases/${localStorage.getItem('userID')}`);  
+            const request = await axios.get(`https://abirs-django-ecommerce-api.herokuapp.com/fetchIndivPurchases/${localStorage.getItem('userID')}`);  
             setcontents(request.data)
             console.log(request.data)
         }
@@ -44,7 +44,7 @@ function AccountDashboard(props) {
     const [fav, setfav] = useState([])
     useEffect(()=>{
         async function fetchData() {
-            const request = await axios.get(`http://127.0.0.1:8000/fetchUsersFavourites/${localStorage.getItem('userID')}`);  
+            const request = await axios.get(`https://abirs-django-ecommerce-api.herokuapp.com/fetchUsersFavourites/${localStorage.getItem('userID')}`);  
             setfav(request.data)
         }
         fetchData()
@@ -54,7 +54,7 @@ function AccountDashboard(props) {
     const [orders, setorders] = useState([])
     useEffect(()=>{
         async function fetchData() {
-            const request = await axios.get(`http://127.0.0.1:8000/fetchIndivOnOrders/${localStorage.getItem('userID')}`);  
+            const request = await axios.get(`https://abirs-django-ecommerce-api.herokuapp.com/fetchIndivOnOrders/${localStorage.getItem('userID')}`);  
             setorders(request.data)
         }
         fetchData()
@@ -114,7 +114,7 @@ function AccountDashboard(props) {
                     <Route exact path='/myAccount/purchases'>
                         <Tables 
                             move={props.move}
-                            url={`http://127.0.0.1:8000/fetchIndivPurchases/${localStorage.getItem('userID')}`} 
+                            url={`https://abirs-django-ecommerce-api.herokuapp.com/fetchIndivPurchases/${localStorage.getItem('userID')}`} 
                             title='Purchase Details'
                             rows={['Purchase ID', 'Purchased Items', 'Qty', 'Individual Price', 'Cumulative Price', 'Total Price', 'Date']}
                         />
@@ -122,7 +122,7 @@ function AccountDashboard(props) {
                     <Route exact path='/myAccount/favourites'>
                         <Tables 
                             move={props.move}
-                            url={`http://127.0.0.1:8000/fetchUsersFavourites/${localStorage.getItem('userID')}`}
+                            url={`https://abirs-django-ecommerce-api.herokuapp.com/fetchUsersFavourites/${localStorage.getItem('userID')}`}
                             title='My Favourites'
                             rows={['Product ID', 'Name', 'Category', 'SubCategory', 'Actual Price', 'Discount']}
                         />
@@ -130,7 +130,7 @@ function AccountDashboard(props) {
                     <Route exact path='/myAccount/on-order'>
                         <Tables
                             move={props.move}
-                            url={`http://127.0.0.1:8000/fetchIndivOnOrders/${localStorage.getItem('userID')}`} 
+                            url={`https://abirs-django-ecommerce-api.herokuapp.com/fetchIndivOnOrders/${localStorage.getItem('userID')}`} 
                             title='On Orders'
                             rows={['Order ID', 'Purchased Items', 'Qty', 'Individual Price', 'Cumulative Price', 'Total Price', 'Date of Order']}
                         />

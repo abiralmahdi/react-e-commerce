@@ -37,7 +37,7 @@ function Tables(props) {
 
     function removeFromFavourite(item, itemObj){
         props.move()
-        axios.delete(`http://127.0.0.1:8000/removeFromFavourite/${item}`)
+        axios.delete(`https://abirs-django-ecommerce-api.herokuapp.com/removeFromFavourite/${item}`)
         .then(
             res=>{                
                 console.log(JSON.stringify(res.data))
@@ -73,7 +73,7 @@ function Tables(props) {
         obj["totalPrice"] = itemObj[3]
         obj["discount"] = itemObj[4]
 
-        axios.post('http://127.0.0.1:8000/addToPurchases', obj).then(
+        axios.post('https://abirs-django-ecommerce-api.herokuapp.com/addToPurchases', obj).then(
             res => {
                 if (res.data === 400){
                     alert('There was an error. Please try again later.')

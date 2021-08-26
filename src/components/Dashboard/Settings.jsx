@@ -9,7 +9,7 @@ function Settings() {
     function changePassword(e){
         if (e.target[0].value === cookies.get('password', { path: '/' })){
           if (e.target[1].value === e.target[2].value){
-            axios.post(`http://127.0.0.1:8000/accounts/change-password/${cookies.get('username', {path:'/'})}`, {
+            axios.post(`https://abirs-django-ecommerce-api.herokuapp.com/accounts/change-password/${cookies.get('username', {path:'/'})}`, {
               "password":e.target[1].value,
               }
             ).then(
@@ -42,7 +42,7 @@ function Settings() {
 
 function deactivateAccount(e){
   if (e.target[0].value === cookies.get('password', { path: '/' })){
-    axios.post(`http://127.0.0.1:8000/accounts/deactivateID/${cookies.get('username', {path:'/'})}`, {
+    axios.post(`https://abirs-django-ecommerce-api.herokuapp.com/accounts/deactivateID/${cookies.get('username', {path:'/'})}`, {
               "password":e.target[0].value,
               }
             ).then(

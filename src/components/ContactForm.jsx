@@ -12,7 +12,7 @@ function ContactForm(props) {
     let contact = e.target[2].value
     let subject = e.target[3].value
 
-    axios.post('http://127.0.0.1:8000/contact-us', {
+    axios.post('https://abirs-django-ecommerce-api.herokuapp.com/contact-us', {
       'name': name, 
       'email': email, 
       'contact':contact, 
