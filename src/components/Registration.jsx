@@ -18,7 +18,7 @@ function Registration(props) {
         props.move()
         
         if (e.target[6].value === e.target[7].value){
-            axios.post(`https://abirs-django-ecommerce-api.herokuapp.com/accounts/register`, {
+            axios.post(`http://127.0.0.1:8000/accounts/register`, {
                 "first_name" : e.target[1].value,
                 "last_name" : e.target[2].value,
                 "username" : e.target[3].value,

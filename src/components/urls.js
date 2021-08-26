@@ -1,1 +1,1 @@
-export const URLS = 'https://abirs-django-ecommerce-api.herokuapp.com'
+export const URLS = 'http://127.0.0.1:8000'

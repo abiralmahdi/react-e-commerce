@@ -4,16 +4,13 @@ import './Table.css'
 
 function Tables(props) {
 
-
-    
     function openNavBar(){
         let navbar = document.getElementById('sidenavbar')
         let main = document.getElementById('page-wrapper')
         navbar.style.display = 'flex'
         // main.style.marginLeft = '260px'
-
-
     }
+
 
     // Use State for setting up the main contents of the table
     let details = []   // Array for converting the JSON data to list
@@ -27,21 +24,20 @@ function Tables(props) {
             for (let content in request.data){
                 details.push(Object.values(request.data[content]))  // Pushing the JSON data in a form of array
             }
-
             setcontents(details)   // Setting up the data in useState
         } 
         fetchData()
     }, [])
 
     
-
     // for (let content in contents){
     //     details.push(Object.values(contents[content]))  
     // }
 
+
     function removeFromFavourite(item, itemObj){
         props.move()
-        axios.delete(`https://abirs-django-ecommerce-api.herokuapp.com/removeFromFavourite/${item}`)
+        axios.delete(`http://127.0.0.1:8000/removeFromFavourite/${item}`)
         .then(
             res=>{                
                 console.log(JSON.stringify(res.data))
@@ -77,13 +73,17 @@ function Tables(props) {
         obj["totalPrice"] = itemObj[3]
         obj["discount"] = itemObj[4]
 
-        axios.post('https://abirs-django-ecommerce-api.herokuapp.com/addToPurchases', obj).then(
+        axios.post('http://127.0.0.1:8000/addToPurchases', obj).then(
             res => {
                 if (res.data === 400){
                     alert('There was an error. Please try again later.')
                 }
                 else{
                     alert(JSON.stringify(res.data))
+                    for (let content in res.data){
+                        details.push(Object.values(res.data[content]))  // Pushing the JSON data in a form of array
+                    }
+                    setcontents(details)   // Setting up the data in useState
                 }
             }
         )

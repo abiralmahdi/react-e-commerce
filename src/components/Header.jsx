@@ -351,7 +351,7 @@ if (props.loggedIn){
             item => (
                 <div className='row no-gutters'>
                     <div className='col-sm-5'>
-                    <img className='card-img' src={`https://abirs-django-ecommerce-api.herokuapp.com${item[1]['image']}`} style={{height:'100%', padding:'10px'}}/>
+                    <img className='card-img' src={`http://127.0.0.1:8000${item[1]['image']}`} style={{height:'100%', padding:'10px'}}/>
                     </div>
                     <div className='col-sm-7'>
                       <div className='card-body cart-items'>

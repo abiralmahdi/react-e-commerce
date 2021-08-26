@@ -21,7 +21,7 @@ function Checkout() {
 
       useEffect(()=>{
         async function fetchData() {
-            const request = await axios.get(`https://abirs-django-ecommerce-api.herokuapp.com/accounts/fetchSingleUser/${cookies.get('username')}`);
+            const request = await axios.get(`http://127.0.0.1:8000/accounts/fetchSingleUser/${cookies.get('username')}`);
             setuserData(request.data)
         }
         fetchData()
@@ -29,7 +29,7 @@ function Checkout() {
         
 
     function handlePayment(e){
-      axios.post(`https://abirs-django-ecommerce-api.herokuapp.com/payment`, {
+      axios.post(`http://127.0.0.1:8000/payment`, {
         'fname': e.target[0].value,
         'lname': e.target[1].value,
         'username': userData.email,

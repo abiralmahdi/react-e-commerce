@@ -67,7 +67,7 @@ function ItemCard(props) {
         <Card className='shadow mainCard' onClick={props.handleClick}>
             
             <Link to={`/products/${props.category}/${props.subcategory}/${props.id}`} onClick={StoreItemDetails2}>
-                <Card.Img variant="top" src={'https://abirs-django-ecommerce-api.herokuapp.com' + props.image} style={{height:'200px'}} />
+                <Card.Img variant="top" src={'http://127.0.0.1:8000' + props.image} style={{height:'200px'}} />
             </Link>
             
             <Card.Body>
