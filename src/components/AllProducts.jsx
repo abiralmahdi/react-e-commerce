@@ -18,22 +18,18 @@ function AllProducts(props) {
 
     if (props.catID === undefined || props.catID === null || props.catID === ''){
         categoryID = localStorage.getItem('category')
-        console.log(categoryID)
     }
     else{
         categoryID = props.catID
-        console.log(categoryID)
 
     }
 
 
     if (props.subCatID === undefined || props.subCatID === null || props.subCatID === ''){
         subCategoryID = localStorage.getItem('subcategory')
-        console.log(subCategoryID)
     }
     else{
         subCategoryID = props.subCatID
-        console.log(subCategoryID)
     }
 
 
@@ -70,7 +66,6 @@ function AllProducts(props) {
         window.scrollTo(0, 0);
       }, []);
 
-      console.log(categoryName)
 
     GetCategory()
 

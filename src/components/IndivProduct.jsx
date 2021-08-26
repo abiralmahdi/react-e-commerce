@@ -38,7 +38,6 @@ useEffect(()=>{
       const request2 = await axios.get(`https://abirs-django-ecommerce-api.herokuapp.com/checkFavourites/${request.data[product_id-1].id}/${request3.data.id}`)
       .then(
           res => {
-            console.log(res)
             res.data===true ? setisFavourite(true) : setisFavourite(false)
           }
       )
@@ -64,10 +63,7 @@ if (JSON.parse(localStorage.getItem('cart')) != null){
     }
 }
 else{
-    cond = false
-    console.log(localStorage.getItem('cart'))
-    console.log(cond)
-    
+    cond = false    
 }
 
 }, [])
@@ -95,7 +91,6 @@ function addToWishList(){
         'discount': 3
     }).then(
         res => {
-            console.log(res.data)
             setisFavourite(true)
             alert('Item added to wishlist successfully')
         },
@@ -111,14 +106,11 @@ function addToCart(){
     cartItemsIndiv['image'] = productDetails.image
     cartItemsIndiv['id'] = productDetails.id
     cartItemsIndiv['quantity'] = 1
-    console.log(cartItemsIndiv)
     props.cart[productDetails.id] = cartItemsIndiv
     props.setcart(props.cart)
-    console.log(props.cart)
 
     localStorage.setItem('cart', JSON.stringify(props.cart))
     let presentTotalPrice = localStorage.getItem('totalPrice')
-    console.log(presentTotalPrice)
     if (presentTotalPrice != null){
         let newTotalPrice = parseInt(presentTotalPrice) + productDetails.presentPrice
         localStorage.setItem('totalPrice', newTotalPrice)
@@ -129,17 +121,10 @@ function addToCart(){
     }
     
     let cart = JSON.parse(localStorage.getItem('cart'))
-    console.log(cart)
     setaddedToCart(true)
 
     // setaddedButton(true)}
 }
-
-console.log(JSON.parse(localStorage.getItem('cart')))
-
-
-
-
 
 
 useEffect(() => {

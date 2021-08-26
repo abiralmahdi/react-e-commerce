@@ -24,7 +24,6 @@ function ContactForm(props) {
         alert('We have recieved your message')
       }
       else{
-        console.log(res.data)
         alert('There was a server error. Please try again later after sometime.')
       }
     }

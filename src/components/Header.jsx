@@ -228,7 +228,7 @@ if (props.loggedIn){
     <div className='fixed-top'>
       <Navbar bg="" variant="dark" id="topNavbar" expand="lg">
         <Navbar.Brand id="NavbarBrand">
-          Welcome To Imperia Pastry House
+          Welcome To Imperia Pastry House (Updated)
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>

@@ -15,8 +15,6 @@ function Registration(props) {
     const [addressState, setaddressState] = useState("")
 
     function handleSubmit(e){
-        // console.log(e.target[1].value)
-        // console.log(e.target[2].value)
         props.move()
         
         if (e.target[6].value === e.target[7].value){

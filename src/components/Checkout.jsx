@@ -5,15 +5,16 @@ import Cookies from 'universal-cookie';
 
 function Checkout() {
     const cookies = new Cookies();
+
     let cart = JSON.parse(localStorage.getItem('cart'))
     const [userData, setuserData] = useState({})
 
-    if (cart === undefined || cart === null){
-        var result = []
-      }
-      else{
-        var result = Object.entries(cart)
-      }
+    const [cartResult, setcartResult] = useState([])
+
+    if (cart === undefined || cart === null){}
+    else{
+      setcartResult(Object.entries(cart))
+    }
 
       useEffect(()=>{
         async function fetchData() {
@@ -33,10 +34,9 @@ function Checkout() {
         'contact':e.target[4].value,
         'address':e.target[5].value,
         'totalPrice':localStorage.getItem('totalPrice'),
-        'purchaseDetails': JSON.stringify(result)
+        'purchaseDetails': JSON.stringify(cartResult)
       })
       .then(res => {
-        console.log(res.data)
         localStorage.removeItem('cart')
         localStorage.removeItem('totalPrice')
         window.location.href = res.data
@@ -71,8 +71,8 @@ function Checkout() {
               <span className="col-md-2"> <b>Quantity</b>  </span>
               <span className="col-md-4">Total Price</span>
           </li>
-          {result != null &&
-          result.map(
+          {cartResult != null &&
+          cartResult.map(
             item => (
             <li className="list-group-item d-flex justify-content-between lh-condensed">
               <div>

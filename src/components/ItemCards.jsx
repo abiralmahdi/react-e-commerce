@@ -20,7 +20,6 @@ function ItemCards(props) {
       fetchData()
   }, [])
 
-  console.log(items)
   
 
 

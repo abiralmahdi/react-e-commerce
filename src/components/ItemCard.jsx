@@ -40,7 +40,6 @@ function ItemCard(props) {
 
         localStorage.setItem('cart', JSON.stringify(props.cart))
         let presentTotalPrice = localStorage.getItem('totalPrice')
-        console.log(presentTotalPrice)
         if (presentTotalPrice != null){
             let newTotalPrice = parseInt(presentTotalPrice) + props.price
             localStorage.setItem('totalPrice', newTotalPrice)
@@ -51,7 +50,6 @@ function ItemCard(props) {
         }
         
         let cart = JSON.parse(localStorage.getItem('cart'))
-        console.log(cart)
 
         setaddedButton(true)
 
