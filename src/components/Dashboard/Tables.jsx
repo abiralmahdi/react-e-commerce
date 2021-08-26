@@ -84,7 +84,7 @@ function Tables(props) {
                     setcontents([])
                 }
                 else{
-                    alert('There was an error. Please try again later.')
+                    alert(JSON.stringify(res.data))
                 }
             }
         )
