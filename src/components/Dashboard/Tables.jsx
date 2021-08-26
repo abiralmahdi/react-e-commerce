@@ -16,21 +16,28 @@ function Tables(props) {
     }
 
     // Use State for setting up the main contents of the table
+    let details = []   // Array for converting the JSON data to list
     const [contents, setcontents] = useState([])
+
     useEffect(()=>{
         async function fetchData() {
             const request = await axios.get(props.url);    // sending a get request to fetch data
             console.log(request.data)
-            setcontents(request.data)   // Setting up the data in useState
+
+            for (let content in request.data){
+                details.push(Object.values(request.data[content]))  // Pushing the JSON data in a form of array
+            }
+
+            setcontents(details)   // Setting up the data in useState
         } 
         fetchData()
     }, [])
 
-    let details = []   // Array for converting the JSON data to list
+    
 
-    for (let content in contents){
-        details.push(Object.values(contents[content]))  // Pushing the JSON data in a form of array
-    }
+    // for (let content in contents){
+    //     details.push(Object.values(contents[content]))  
+    // }
 
     function removeFromFavourite(item, itemObj){
         props.move()
@@ -70,10 +77,11 @@ function Tables(props) {
         obj["totalPrice"] = itemObj[3]
         obj["discount"] = itemObj[4]
 
-        axios.post('https://abirs-django-ecommerce-api.herokuapp.com/addToPurchases', obj).then(
+        axios.post('http://127.0.0.1:8000/addToPurchases', obj).then(
             res => {
-                if (JSON.stringify(res.data) === '{"status":"Order delivered"}'){
-                    alert('Order Delivered')
+                if (JSON.stringify(res.data['status']) === 'Order delivered'){
+                    alert(JSON.stringify(res.data))
+                    setcontents([])
                 }
                 else{
                     alert('There was an error. Please try again later.')
@@ -178,7 +186,7 @@ function Tables(props) {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {details.map(
+                                            {contents.map(
                                                 content => (
                                                     <tr key={details.indexOf(content)}>
                                                         <td>{content[0]}</td>
